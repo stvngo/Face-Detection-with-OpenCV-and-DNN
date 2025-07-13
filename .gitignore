@@ -140,7 +140,8 @@ Thumbs.db
 
 # Model files (large files)
 *.caffemodel
-*.prototxt
+# Allow specific prototxt files for the project
+# *.prototxt
 
 # Images (optional - uncomment if you don't want to track test images)
 # *.jpg
