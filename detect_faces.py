@@ -21,6 +21,8 @@ net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
 image = cv2.imread(args["image"])
+if image is None:
+    raise FileNotFoundError(f"Image file '{args['image']}' not found or could not be opened.")
 (h, w) = image.shape[:2] # extract dimensions
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 1.0, 
                              (300, 300), (104.0, 177.0, 123.0))
@@ -54,7 +56,7 @@ for i in range(0, detections.shape[2]):
         # draw the bounding box of the face
         cv2.rectangle(image, (startX, startY), (endX, endY), 
                       (0, 0, 255), 2)
-        cv2.putText(image, text, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 
+        cv2.putText(image, text, (startX, int(y)), cv2.FONT_HERSHEY_SIMPLEX, 
                     0.45, (0, 0, 255), 2)
         
 # show the output image
