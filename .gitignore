@@ -139,7 +139,7 @@ dmypy.json
 Thumbs.db
 
 # Model files (large files)
-*.caffemodel
+# *.caffemodel
 # Allow specific prototxt files for the project
 # *.prototxt
 
