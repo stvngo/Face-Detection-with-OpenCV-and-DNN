@@ -13,7 +13,6 @@ ap.add_argument("-m", "--model", required=True,
 ap.add_argument("-c", "--confidence", type=float, default=0.5, 
                 help="minimum probability to filter weak detections") # optional
 args = vars(ap.parse_args())
-args
 
 # load our serialized model from disk
 print("[INFO] loading model...")
