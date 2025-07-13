@@ -55,9 +55,13 @@ for i in range(0, detections.shape[2]):
         y = startY - 10 if startY - 10 > 10 else startY + 10 
         # draw the bounding box of the face
         cv2.rectangle(image, (startX, startY), (endX, endY), 
-                      (0, 0, 255), 2)
+                      (0, 0, 255), 2) 
+        # params: (img, pt1 (top-left corner), pt2 (bottom-right corner), 
+        # color as BGR tuple, thickness)
         cv2.putText(image, text, (startX, int(y)), cv2.FONT_HERSHEY_SIMPLEX, 
-                    0.45, (0, 0, 255), 2)
+                    1, (0, 0, 255), 2) # 0.45 by default
+        # params: (img, text, bottom-keft corner of text string in image as 
+        # tuple, fontFace, font scale, color as BGR tuple, thickness)
         
 # show the output image
 cv2.imshow("Output", image)
