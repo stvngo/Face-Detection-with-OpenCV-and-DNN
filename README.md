@@ -72,3 +72,7 @@ This project is open source and available under the MIT License.
 ## Contributing
 
 Feel free to submit issues and enhancement requests! 
+
+## Personal Notes for Improvements
+- Integrate with Raspberry Pi
+- Facial and emotional gesture detection with AI feedback integration
